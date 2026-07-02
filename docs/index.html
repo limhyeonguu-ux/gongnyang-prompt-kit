@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>공냥 프롬프트 킷 — 막연한 한마디를 gpt-image-2 완성 프롬프트로</title>
-<meta name="description" content="거친 한마디를 바로 생성에 넣을 완성 한국어 프롬프트로 컴파일하는 Claude Code 스킬. 네거티브 금지·끝 AR 토큰·결과 기반 서술·검증 스크립트." />
+<title>공냥 프롬프트 킷 VOL.2 — 막연한 한마디를 gpt-image-2 완성 프롬프트로</title>
+<meta name="description" content="거친 한마디를 바로 생성에 넣을 완성 한국어 프롬프트로 컴파일하는 Claude Code 스킬. 3티어 네거티브·화보 Format B·타이포 영역 문법·C11 키아트·티어 인식 검증기." />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%90%BE%3C/text%3E%3C/svg%3E" />
 <style>
   :root{
@@ -69,11 +69,14 @@
   .install code{display:block;background:var(--panel2);border:1px solid var(--line);border-radius:11px;padding:14px 18px;color:#ccd4e6;font-size:.86rem}
   footer{padding:48px 0 70px;text-align:center;color:var(--dim);font-size:.9rem;border-top:1px solid var(--line)}
   footer .brand{display:inline-flex;margin-bottom:12px;color:var(--ink)}
+  .vol{font-family:var(--mono);font-size:.68em;color:var(--gold);border:1px solid var(--line);border-radius:6px;padding:1px 7px;letter-spacing:.08em;vertical-align:middle}
+  .keyviz{display:block;width:100%;border-radius:var(--r);border:1px solid var(--line);margin-top:44px;box-shadow:0 30px 70px -35px rgba(0,0,0,.9)}
+  .demo-gif{display:block;width:100%;border-radius:var(--r);border:1px solid var(--line);margin-top:26px}
 </style>
 </head>
 <body>
 <nav><div class="wrap">
-  <span class="brand"><span class="paw">🐾</span> 공냥 프롬프트 킷</span>
+  <span class="brand"><span class="paw">🐾</span> 공냥 프롬프트 킷 <span class="vol">VOL.2</span></span>
   <span class="nav-links">
     <a href="#rules">규칙</a><a href="#check">검증기</a><a href="#cats">카테고리</a>
     <a href="https://github.com/kimsh-1/gongnyang-prompt-kit">GitHub</a>
@@ -81,13 +84,14 @@
 </div></nav>
 
 <header><div class="wrap">
-  <span class="pill-top">🐾 Claude Code Skill · gpt-image-2</span>
+  <span class="pill-top">🐾 Claude Code Skill · gpt-image-2 · VOL.2</span>
   <h1>막연한 한마디를<br><span class="grad">완성 프롬프트로</span></h1>
-  <p class="sub">"포스터 하나 만들어줘"를, 바로 생성에 넣을 완성 한국어 프로덕션 프롬프트로 컴파일한다. 1,000장을 뽑으며 다듬은 규칙을 한 스킬로.</p>
+  <p class="sub">"포스터 하나 만들어줘" 한 줄을, 그대로 생성에 밀어넣을 완성된 한국어 프로덕션 프롬프트로 컴파일한다. 1,000장 뽑아가며 손에 붙인 규칙, 스킬 하나에 다 넣었다.</p>
   <div class="cta">
     <a class="btn primary" href="https://github.com/kimsh-1/gongnyang-prompt-kit">GitHub에서 보기 →</a>
     <a class="btn ghost" href="#rules">핵심 규칙</a>
   </div>
+  <img class="keyviz" src="main.png" alt="공냥 프롬프트 킷 VOL.2 키비주얼" />
 </div></header>
 
 <div class="compile"><div class="wrap">
@@ -106,54 +110,72 @@
 <span class="ar">AR 4:5</span></div>
     </div>
   </div>
+  <img class="demo-gif" src="hero.gif" alt="공냥 프롬프트 킷 — 거친 요청이 완성 프롬프트로 컴파일되는 데모" loading="lazy" />
 </div></div>
 
 <section id="rules"><div class="wrap">
   <h2>핵심 규칙</h2>
-  <p class="lead">이미지가 잘 나오게 하는 게 아니라, <b>안 나오게 하는 습관을 막는</b> 규칙이다.</p>
+  <p class="lead">이미지가 잘 나오게 만드는 게 아니다. <b>안 나오게 하는 습관</b>, 그걸 막는 규칙이다.</p>
   <div class="rules">
-    <div class="rule no"><b>네거티브 안 씀</b><span>gpt-image-2는 <code>no watermark</code> 같은 부정문을 오히려 그 단어로 렌더한다. "브랜드 없는 클린 마감"처럼 전부 긍정형으로.</span></div>
+    <div class="rule no"><b>네거티브 기본 금지</b><span>gpt-image-2는 장면 네거티브("no crowd")를 오히려 그 단어로 렌더한다. 장면 요소 배제는 전부 긍정형 — "프레임 안엔 인물 한 명, 단독".</span></div>
+    <div class="rule"><b>티어 화이트리스트 2종</b><span>예외는 딱 두 레인. <b>Tier-1</b> 텍스트 렌더 가드 7종(<code>no duplicate text</code> 등), <b>Tier-2</b> 화보 컴플라이언스 페어(명시 선언 시만). 검증기가 티어를 인지해 잡는다.</span></div>
     <div class="rule no"><b>앞 브래킷 안 씀</b><span><code>[AR x:y SIZE]</code> 금지. size는 API 파라미터, 프롬프트엔 끝에 <code>AR x:y</code> 토큰만.</span></div>
-    <div class="rule"><b>장비 → 결과로</b><span>모델은 <code>Canon R5 f/1.4</code>를 모른다. "shallow DoF, background falls off softly"로 쓴다.</span></div>
     <div class="rule no"><b>SD 태그 버림</b><span><code>masterpiece · 8k · ultra-detailed</code>는 노이즈. 빈 형용사도 금지.</span></div>
+    <div class="rule"><b>장비 → 결과로</b><span>모델은 <code>Canon R5 f/1.4</code>를 모른다. "shallow DoF, background falls off softly"로 쓴다.</span></div>
     <div class="rule"><b>수치는 박는다</b><span>HEX 팔레트, 켈빈, <code>key:fill 1:2</code> 비율 → 품질↑.</span></div>
-    <div class="rule"><b>1행 = 1컷 = 1 호출</b><span>한 캔버스에 그리드로 여러 컷 그리지 않는다. 여러 컷은 별도 행으로.</span></div>
+    <div class="rule no"><b>1행 = 1컷 = 1 호출</b><span>한 캔버스에 그리드로 여러 컷 그리지 않는다. 여러 컷은 별도 행으로.</span></div>
+    <div class="rule"><b>포맷 A / 포맷 B</b><span><b>A</b> 라벨 6섹션(포스터·키아트·인포그래픽 등 구조물), <b>B</b> 화보 플랫 콤마형(단독 인물 에디토리얼 전용, 슬롯 12종).</span></div>
   </div>
 </div></section>
 
 <section id="check"><div class="wrap">
-  <h2>검증기 내장 🐾</h2>
-  <p class="lead">작성한 프롬프트가 규칙을 지켰는지 자동으로 검사한다. 위반은 <code>error</code>, 권고는 <code>warning</code>.</p>
-  <pre><span class="c"># 통과</span>
+  <h2>티어 인식 검증기 내장 🐾</h2>
+  <p class="lead">써놓은 프롬프트가 규칙을 지켰는지 알아서 검사한다. 위반은 <code>error</code>, 권고는 <code>warning</code>. 티어를 읽어서 화이트리스트 밖 네거티브만 골라 잡는다.</p>
+  <pre><span class="c"># 통과 — 포맷·티어까지 판별</span>
 $ node scripts/check_prompt.mjs examples/poster.txt
-<span class="pre-ok">{ "ok": true, "errors": [], "warnings": [] }</span>
+<span class="pre-ok">{ "ok": true, "format": "A", "tier": 1, "errors": [], "warnings": [] }</span>
 
-<span class="c"># 위반 (앞 브래킷·masterpiece·no watermark·가중치·--ar)</span>
+<span class="c"># 화보 Format B는 Tier-2로 검사</span>
+$ node scripts/check_prompt.mjs --tier 2 examples/hwabo_formatB.txt
+<span class="pre-ok">{ "ok": true, "format": "B", "tier": 2, ... }</span>
+
+<span class="c"># 위반 (앞 브래킷·masterpiece·티어 밖 네거티브·가중치·--ar)</span>
 $ node scripts/check_prompt.mjs examples/bad_poster.txt
-<span class="pre-x">{ "ok": false, "errors": [ 9 items ] }</span></pre>
+<span class="pre-x">{ "ok": false, "errors": [ 9 items ] }</span>
+
+<span class="c"># jsonl 배치 검증 · 회귀 셀프테스트</span>
+$ node scripts/check_prompt.mjs --jsonl examples/prompts.sample.jsonl
+$ node scripts/check_prompt.mjs --test   <span class="pre-ok">14/14 fixtures green</span></pre>
 </div></section>
 
 <section id="cats"><div class="wrap">
-  <h2>카테고리 C1~C10</h2>
-  <p class="lead">컷타입·기본 AR·필수 디테일은 <code>references/category-patterns.md</code>.</p>
+  <h2>카테고리 C1~C11</h2>
+  <p class="lead">컷타입이랑 기본 AR, 필수 디테일은 <code>references/category-patterns.md</code>에 있다. VOL.2 오면서 시네마틱 키아트(C11)가 붙었다.</p>
   <div class="cats">
-    <span class="cat"><b>C1</b> 패션</span><span class="cat"><b>C2</b> 뷰티</span>
+    <span class="cat"><b>C1</b> 패션/화보</span><span class="cat"><b>C2</b> 뷰티</span>
     <span class="cat"><b>C3</b> 한국어 포스터</span><span class="cat"><b>C4</b> 제품 도감</span>
     <span class="cat"><b>C5</b> 캠페인</span><span class="cat"><b>C6</b> 인포그래픽</span>
     <span class="cat"><b>C7</b> 카드뉴스</span><span class="cat"><b>C8</b> 브랜딩 목업</span>
     <span class="cat"><b>C9</b> 3D 아이콘</span><span class="cat"><b>C10</b> 만화/웹툰</span>
+    <span class="cat"><b>C11</b> 시네마틱 키아트</span>
   </div>
+</div></section>
+
+<section id="arch"><div class="wrap">
+  <h2>구조</h2>
+  <p class="lead">거친 요청이 스킬 코어와 레퍼런스를 거쳐 완성 프롬프트가 되고, 검증기를 통과해야 생성으로 넘어간다. 아래 구조도도 이 킷으로 컴파일해 뽑은 것.</p>
+  <img class="keyviz" style="max-width:640px;margin:0 auto" src="architecture.png" alt="공냥 프롬프트 킷 구조도" loading="lazy" />
 </div></section>
 
 <section class="install"><div class="wrap">
   <h2>설치</h2>
-  <p class="lead">Claude Code 개인 스킬로 심볼릭 링크 한 줄.</p>
+  <p class="lead">Claude Code 개인 스킬로, 심볼릭 링크 한 줄이면 끝.</p>
   <code>ln -s "$PWD/skills/image-prompt" ~/.claude/skills/image-prompt</code>
-  <p class="lead" style="margin-top:18px">이후 "이미지 프롬프트 써줘", "공냥 프롬프트", "포스터/카드뉴스/만화 프롬프트" 트리거나 <code>/image-prompt</code>로 작동. 실제 생성·양산은 <a href="https://github.com/kimsh-1/codex-fleet">codex-fleet</a>.</p>
+  <p class="lead" style="margin-top:18px">그다음은 "이미지 프롬프트 써줘", "공냥 프롬프트", "포스터/카드뉴스/만화 프롬프트" 트리거나 <code>/image-prompt</code>로 돈다. 진짜 뽑고 양산하는 건 <a href="https://github.com/kimsh-1/codex-fleet">codex-fleet</a> 몫이고.</p>
 </div></section>
 
 <footer><div class="wrap">
-  <span class="brand"><span class="paw">🐾</span> 공냥 프롬프트 킷</span><br>
+  <span class="brand"><span class="paw">🐾</span> 공냥 프롬프트 킷 <span class="vol">VOL.2</span></span><br>
   MIT License · <a href="https://github.com/kimsh-1/gongnyang-prompt-kit">github.com/kimsh-1/gongnyang-prompt-kit</a>
 </div></footer>
 </body>

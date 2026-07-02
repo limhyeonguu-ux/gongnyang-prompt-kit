@@ -111,7 +111,7 @@ function validateText(raw, opts = {}, rec = null) {
     err(errors, "E-TEXT-QUOTE", "Text-in-image/korean_copy가 있는데 따옴표 카피가 0개 — 렌더 카피는 따옴표로 고정.");
   const dup = [...new Set(quotes.filter((q, i) => quotes.indexOf(q) !== i))];
   if (dup.length) err(errors, "E-TEXT-DUP", `동일 따옴표 카피 2회 이상(${dup.join(" / ")}) — 모든 카피는 한 번씩만.`);
-  if (quotes.length >= 2 && !has(/(상단|하단|중앙|좌측|우측|타이틀|부제|서브|라벨|캡션|헤드|말풍선|SFX)/)) err(warnings, "W-TEXT-ROLE", "따옴표 카피 2개 이상인데 롤 라벨(타이틀/부제/위치)이 없음.");
+  if (quotes.length >= 2 && !has(/(상단|하단|중앙|좌측|우측|타이틀|부제|서브|라벨|캡션|헤드|말풍선|SFX|headline|subhead|callout|billing|caption|centered|upper|lower)/i)) err(warnings, "W-TEXT-ROLE", "따옴표 카피 2개 이상인데 롤 라벨(타이틀/부제/위치)이 없음.");
   const mix = quotes.find((q) => /[가-힣]/.test(q) && /[A-Za-z]/.test(q));
   if (mix) err(warnings, "W-TEXT-MIXLANG", `한 따옴표 문자열 안 KO+EN 혼합: "${mix}" — 언어별로 분리.`);
   if ((renderText || has(/(텍스트|한글|타이틀|부제|라벨|말풍선|내레이션|SFX|카피|문구)/)) && !has(/(또렷|가독|한 번씩만|1~2개만|legible|appears once)/))
