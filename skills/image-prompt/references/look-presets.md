@@ -27,7 +27,7 @@
 ## L2 시네마틱 그레이드
 - 성격: 필름 스틸 한 장. 얕은 심도 + 컬러 그레이드 + 헤이즈.
 - 팔레트: `#0E1420` 딥 섀도 · `#D9A566` 웜 하이라이트 · `#4A6670` 스틸 블루 미드톤
-- 드롭인: `single frame from a film, shallow DoF with background falling off softly, warm key against cool shadow pools, faint atmospheric haze catching the light, graded palette of deep shadow #0E1420, warm highlight #D9A566, steel-blue midtone #4A6670, fine photographic grain, subtle anamorphic-style horizontal flare`
+- 드롭인: `single frame from a film, shallow DoF with background falling off softly, warm key against cool shadow pools, faint drifting haze catching the light, graded palette of deep shadow #0E1420, warm highlight #D9A566, steel-blue midtone #4A6670, fine photographic grain, subtle anamorphic-style horizontal flare`
 
 ## L3 미니멀 프로덕트
 - 성격: 흰 무대 위 제품 히어로. 그림자 하나로 존재감.
