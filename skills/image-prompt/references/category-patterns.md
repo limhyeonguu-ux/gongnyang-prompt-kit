@@ -48,6 +48,14 @@
   - **수치는 이중 앵커**: 숫자를 큰 타이포로 따옴표 고정 + 막대·게이지·파이는 그 수치의 비율감이 눈에 보이게 지시(`bar filled to roughly 38 percent`). 타이포가 정확도를, 도형이 직관을 맡는다.
   - **핵심 라벨은 따옴표 고정**, 셀 디테일은 `every cell filled with genuine short Korean caption sentences, fully written in real hangul` 로 자유 작성 — 밀도를 깎지 않고 정확도만 배분.
   - **재시도는 단순화가 아니라 축 변경**: 안 나오면 ① 레이아웃 지시를 더 구체화 ② `2048x2048` + quality high ③ 그래도 안 되면 클러스터별 컷 분할(복잡도 유지, 캔버스만 분할). 도표를 포기하는 선택지는 없다.
+- **유형별 돌파 레시피** — 어려운 도표일수록 아래 문법으로 프롬프트를 짠다:
+  - **분기 플로우차트**: 그리드를 먼저 선언하고 노드를 좌표로 배치 — `three-column flowchart grid, decision diamond at center column second row`. 분기 화살표는 라벨 포함(`"YES" labeled arrow branching right, "NO" labeled arrow continuing down`).
+  - **다대다/네트워크**: 허브-스포크로 뭉개지 말고 연결 수를 세어 박는다 — `seven distinct labeled connection lines`, 교차 지점은 `crossing lines drawn with small bridge gaps at intersections`. 노드 배치는 원형/격자 중 하나를 명시.
+  - **계층도/조직도/적층**: 층 수와 층별 노드 수를 전부 선언 — `three-tier hierarchy: one box on top tier, three on middle, five on bottom, connecting lines between tiers`. 적층은 `exploded layered stack, each layer floating with side label`.
+  - **사이클**: 방향·스텝 수·화살표 곡률 — `five-step circular cycle running clockwise, curved arrows between adjacent steps, step numbers inside each node`.
+  - **단면/해부(cutaway)**: 리더선 + 번호 콜아웃 — `numbered leader lines from each internal part to callout labels on the side margin`. 내부 부위 수를 명시해 라벨 개수를 고정.
+  - **비교표**: 열 수·행 수·헤더를 선언하고 셀은 자유 작성 존 — `two-column comparison table with four rows, bold header band, every cell filled with genuine short Korean caption sentences`.
+  - **정밀 데이터 차트**: 축·눈금·시리즈를 문장으로 그린다 — `vertical bar chart, y-axis gridlines labeled 0/25/50/75/100, four bars of visibly different heights` + 각 값은 막대 위 숫자 라벨로 따옴표 고정. 눈금 숫자까지 정확해야 하면 그 숫자들도 따옴표 카피에 포함.
 
 ## C7 카드뉴스
 - 컷타입: `sns_cover`(기본) `sns_content` `tip_card` `viral_hook` `qna_card` `list_card` `editorial_cover` `editorial_content`
