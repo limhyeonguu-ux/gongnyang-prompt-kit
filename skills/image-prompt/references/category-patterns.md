@@ -56,6 +56,10 @@
   - **단면/해부(cutaway)**: 리더선 + 번호 콜아웃 — `numbered leader lines from each internal part to callout labels on the side margin`. 내부 부위 수를 명시해 라벨 개수를 고정.
   - **비교표**: 열 수·행 수·헤더를 선언하고 셀은 자유 작성 존 — `two-column comparison table with four rows, bold header band, every cell filled with genuine short Korean caption sentences`.
   - **정밀 데이터 차트**: 축·눈금·시리즈를 문장으로 그린다 — `vertical bar chart, y-axis gridlines labeled 0/25/50/75/100, four bars of visibly different heights` + 각 값은 막대 위 숫자 라벨로 따옴표 고정. 눈금 숫자까지 정확해야 하면 그 숫자들도 따옴표 카피에 포함.
+- **고밀도 텍스트 슬라이드(실측 2026-07, 40컷 검증)**: 슬라이드당 렌더 한글 **400~800자도 정면 가능** — "gpt-image-2는 도해를 못 그린다"는 반증됨. 관건은 모델 능력이 아니라 아래 3레버:
+  - **캔버스 세로 높이가 텍스트 정확도의 1차 레버**: 초와이드(21:9, codex 실측 세로 ~810px)는 400자에서 글자가 작아져 뭉개진다. **텍스트가 빽빽하면 16:9(세로 ~950px)·2:3·1:1**로 세로를 확보 → 700~800자도 또렷. codex 경로는 큰 캔버스 요청을 무시하고 21:9를 ~1900×810으로 정규화하므로, 정확도는 비율 선택으로 벌어야 한다.
+  - **자유 작성 존이 밀도의 핵심 무기**: 크리티컬 라벨(제목·섹션 헤더)만 따옴표 고정, 나머지 본문은 `each card contains a bold Korean title plus two to three sentences of genuine Korean explanatory text, densely filled, fully written in real hangul, every caption is a real sentence carrying real meaning`. 모델이 개념적으로 **맞는** 설명을 스스로 채운다(B-트리 키값 분배·Raft 로그 인덱스·캐시 트레이드오프까지 논리 정합). placeholder 금지는 부정문 대신 긍정형(`all text lines fully written out as complete hangul words`)으로.
+  - **완벽주의 버리기 = 밀도 해방**: 소규모 오탈자·간헐적 뭉개짐을 허용하면 슬라이드당 20~30개 텍스트 블록을 채울 수 있다. **중간중간 뭉개진 컷·소규모 오탈자는 이 밀도에서 정상 산출** — 치명 카피만 따옴표로 지키고 나머지는 자유 존에 맡긴 뒤, 걸리는 컷만 재생성(후처리 합성 금지, 철칙 9).
 
 ## C7 카드뉴스
 - 컷타입: `sns_cover`(기본) `sns_content` `tip_card` `viral_hook` `qna_card` `list_card` `editorial_cover` `editorial_content`
