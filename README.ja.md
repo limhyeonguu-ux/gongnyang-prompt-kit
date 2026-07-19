@@ -47,7 +47,7 @@ AR 16:9
 | **オクルージョン × 影の叙事（家）** | **マスキング × タイポ環境（嵐）** | **L9 影の叙事（フィルムカメラ）** |
 | ![オクルージョン × 影の叙事 — 家](docs/showcase/PR07.webp) | ![マスキング × タイポ環境 — 嵐](docs/showcase/PR08.webp) | ![L9 影の叙事 — フィルムカメラ](docs/showcase/HD01.webp) |
 
-ギャラリー全体（ビフォー/アフター比較 21ペア・TP 14種・P 12カット・L9 12カット・高密度図表 40カット）→ [デモサイト](https://kimsh-1.github.io/gongnyang-prompt-kit)
+ギャラリー全体（ビフォー/アフター比較 21ペア・TP 14種・P 12カット・L9 12カット）→ [デモサイト](https://kimsh-1.github.io/gongnyang-prompt-kit) ・高密度図表の代表カットは [`examples/diagram-gallery/`](examples/diagram-gallery/)
 
 ## 何が違うのか — v3 単一ルーティング表
 

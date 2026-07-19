@@ -51,7 +51,7 @@ AR 16:9
 | **Occlusion × shadow narrative (집 "home")** | **Masking × typo-environment (폭풍 "storm")** | **L9 shadow narrative (film camera)** |
 | ![Occlusion × shadow narrative — 집 "home"](docs/showcase/PR07.webp) | ![Masking × typo-environment — 폭풍 "storm"](docs/showcase/PR08.webp) | ![L9 shadow narrative — film camera](docs/showcase/HD01.webp) |
 
-Full gallery (21 before/after pairs · 14 TP patterns · 12 P cuts · 12 L9 cuts · 40 dense-diagram cuts) → [demo site](https://kimsh-1.github.io/gongnyang-prompt-kit)
+Full gallery (21 before/after pairs · 14 TP patterns · 12 P cuts · 12 L9 cuts) → [demo site](https://kimsh-1.github.io/gongnyang-prompt-kit) · representative dense-diagram cuts live in [`examples/diagram-gallery/`](examples/diagram-gallery/)
 
 ## What's different — the v3 single routing table
 
