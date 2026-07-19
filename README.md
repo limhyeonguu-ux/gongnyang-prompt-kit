@@ -47,7 +47,7 @@ AR 16:9
 | **오클루전 × 그림자 서사 (집)** | **마스킹 × 타이포-환경 (폭풍)** | **L9 그림자 서사 (필름카메라)** |
 | ![오클루전 × 그림자 서사 — 집](docs/showcase/PR07.webp) | ![마스킹 × 타이포-환경 — 폭풍](docs/showcase/PR08.webp) | ![L9 그림자 서사 — 필름카메라](docs/showcase/HD01.webp) |
 
-갤러리 전체(전후 비교 21페어·TP 14종·P 12컷·L9 12컷·고밀도 도표 40컷) → [데모 사이트](https://kimsh-1.github.io/gongnyang-prompt-kit)
+갤러리 전체(전후 비교 21페어·TP 14종·P 12컷·L9 12컷) → [데모 사이트](https://kimsh-1.github.io/gongnyang-prompt-kit) · 고밀도 도표 대표컷은 [`examples/diagram-gallery/`](examples/diagram-gallery/)
 
 ## 무엇이 다른가 — v3 단일 라우팅 표
 
