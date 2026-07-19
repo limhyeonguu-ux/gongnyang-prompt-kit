@@ -1,24 +1,33 @@
+<div align="center">
+
+<img src="docs/main.png" alt="Gongnyang Prompt Kit VOL.2 key visual" width="720">
+
 # 🐾 Gongnyang Prompt Kit VOL.2
 
-**A Claude Code skill that compiles a vague one-liner into a finished gpt-image-2 production prompt.**
-
-<samp>[한국어](README.md) · **English** · [日本語](README.ja.md)</samp>
+**A Claude Code skill that compiles a vague one-liner into a finished gpt-image-2 prompt.**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-black.svg)](LICENSE) &nbsp;![Claude Code Skill](https://img.shields.io/badge/Claude_Code-Skill-d97757) &nbsp;![target: gpt-image-2](https://img.shields.io/badge/target-gpt--image--2-1E4D40) &nbsp;![library: C1-C12 + P1-P8 + TP1-TP14](https://img.shields.io/badge/library-C1--C12_+_P1--P8_+_TP1--TP14-C19A6B)
 
-![Gongnyang Prompt Kit VOL.2 key visual](docs/main.png)
+[Demo site](https://kimsh-1.github.io/gongnyang-prompt-kit) · [Install](#quickstart) · [Routing](#routing) · [한국어](README.md) · [日本語](README.ja.md)
 
-It takes a request as loose as "make me a poster" and returns a complete production prompt, ready to drop straight into generation. The key visual above was itself generated from a prompt this kit compiled (C11 cinematic key art).
+</div>
 
-![Compile demo — loose request → complete prompt → validator pass](docs/hero.gif)
+<p align="center">
+  <img src="docs/hero.gif" alt="Compile demo — loose request → complete prompt → validator pass" width="720">
+</p>
 
-Loose request → complete prompt → validator pass. All three steps happen inside the skill. Image generation itself is out of scope — for bulk generation use the `codex-imagegen` skill in [codex-fleet](https://github.com/kimsh-1/codex-fleet); for a single image, feed the prompt straight to `codex`.
+<p align="center"><sub>Loose request → complete prompt → validator pass — all three steps happen inside the skill. The key visual above was itself generated from a prompt this kit compiled (C11 cinematic key art).</sub></p>
 
-> Interactive demo: **[kimsh-1.github.io/gongnyang-prompt-kit](https://kimsh-1.github.io/gongnyang-prompt-kit)**
+## Why
+
+- **Naive prompts lose** — feed in a one-liner like "make me a poster" as-is, and the model hands back a result exactly as vague as the request.
+- **The compiler approach** — the request signal maps to one row of a routing table, and that single pattern produces a complete Korean production prompt ready to drop straight into generation.
+- **Validator gate** — negatives outside the whitelist, deprecated SD vocabulary, and size-lock violations are caught as `error`s before anything reaches generation.
+- **Generation is out of scope** — for bulk generation use the `codex-imagegen` skill in [codex-fleet](https://github.com/kimsh-1/codex-fleet); for a single image, feed the prompt straight to `codex`.
 
 ## The only difference is the prompt
 
-Same gpt-image-2. **Left: a human one-liner (`개쩌는 이미지 하나 만들어줘` — "just make me one badass image") fed in as-is. Right: that same one-liner compiled by the kit.** The full compile record is in [`examples/showcase.jsonl`](examples/showcase.jsonl).
+Same gpt-image-2 — **left: a human one-liner (`개쩌는 이미지 하나 만들어줘` — "just make me one badass image") fed in as-is; right: that same one-liner compiled by the kit.**
 
 | Without the skill | Kit-compiled — C11 cinematic key art |
 |---|---|
@@ -43,19 +52,45 @@ AR 16:9
 
 </details>
 
-## Best cuts
+The full compile record is in [`examples/showcase.jsonl`](examples/showcase.jsonl).
 
-| TP8 · Liquid chrome (녹아 "melt") | TP13 · Anamorphic illusion (LOOK) | TP14 · Micrography (고요 "stillness") |
-|---|---|---|
-| ![TP8 liquid chrome — 녹아 "melt"](docs/showcase/TP08.webp) | ![TP13 anamorphic illusion — LOOK](docs/showcase/TP13.webp) | ![TP14 micrography — 고요 "stillness"](docs/showcase/TP14.webp) |
-| **Occlusion × shadow narrative (집 "home")** | **Masking × typo-environment (폭풍 "storm")** | **L9 shadow narrative (film camera)** |
-| ![Occlusion × shadow narrative — 집 "home"](docs/showcase/PR07.webp) | ![Masking × typo-environment — 폭풍 "storm"](docs/showcase/PR08.webp) | ![L9 shadow narrative — film camera](docs/showcase/HD01.webp) |
+## Quickstart
 
-Full gallery (21 before/after pairs · 14 TP patterns · 12 P cuts · 12 L9 cuts) → [demo site](https://kimsh-1.github.io/gongnyang-prompt-kit) · representative dense-diagram cuts live in [`examples/diagram-gallery/`](examples/diagram-gallery/)
+```bash
+git clone https://github.com/kimsh-1/gongnyang-prompt-kit
+ln -s "$PWD/gongnyang-prompt-kit/skills/image-prompt" ~/.claude/skills/image-prompt
+```
 
-## What's different — the v3 single routing table
+In Claude Code, trigger it with phrases like "write me an image prompt", "editorial prompt", "key art", "typography poster" — or run `/image-prompt`.
 
-The core of v3 is one routing table. Given a request signal, you pick one row below and read **only** the one reference file that row points to. The canonical routing table lives in exactly one place — [`skills/image-prompt/SKILL.md`](skills/image-prompt/SKILL.md) — and the table below is a reader-facing mirror of it.
+```bash
+node skills/image-prompt/scripts/check_prompt.mjs examples/poster.txt   # check a prompt you wrote
+```
+
+It returns `{ok, format, tier, errors, warnings}` as JSON; passing and failing samples live in [`examples/`](examples/).
+
+> [!NOTE]
+> Installing via symlink means repo updates apply automatically. Node.js is required to run the validator; to go all the way to generation, you need a [Codex CLI](https://github.com/openai/codex) login plus ChatGPT Plus/Pro.
+
+<details>
+<summary>All validator options</summary>
+
+The validator is tier-aware: it only flags negatives outside the whitelist.
+
+```bash
+node skills/image-prompt/scripts/check_prompt.mjs examples/poster.txt        # text mode
+node skills/image-prompt/scripts/check_prompt.mjs --tier 2 examples/hwabo_formatB.txt
+node skills/image-prompt/scripts/check_prompt.mjs --jsonl examples/prompts.sample.jsonl
+node skills/image-prompt/scripts/check_prompt.mjs --test                     # regression self-test
+```
+
+Negatives outside the whitelist, leading brackets, deprecated SD vocabulary, size-lock violations, and leftover slot tokens are `error`s (with positive-rewrite hints); empty adjectives, missing HEX, and the like are `warning`s.
+
+</details>
+
+## Routing
+
+The core of v3 is one routing table — a request signal picks one row, and you read **only** the one reference file that row points to. The canonical routing table lives in exactly one place, the table in [`skills/image-prompt/SKILL.md`](skills/image-prompt/SKILL.md); the table below is a reader-facing mirror of it.
 
 | When you say | It compiles as | Reference to read |
 |---|---|---|
@@ -72,7 +107,7 @@ The core of v3 is one routing table. Given a request signal, you pick one row be
 
 Library coverage: categories **C1–C12** · typography posters **TP1–TP14** · promo graphics **P1–P8** · look presets **L1–L9** · concept axes **M1–M10 / R / X / T1–T5**.
 
-## Core rule highlights
+## Core rules
 
 These are not rules for making images come out well — they are rules that block the habits that make images come out badly. The full text is in [`skills/image-prompt/SKILL.md`](skills/image-prompt/SKILL.md) §Iron Rules.
 
@@ -86,31 +121,22 @@ These are not rules for making images come out well — they are rules that bloc
 | **Pin the numbers** | HEX palette (3–5 colors per cut), Kelvin, `key:fill 1:2`. |
 | **1 line = 1 cut = 1 call** | Never draw multiple cuts as a grid on one canvas. Multiple cuts go on N lines. |
 
-## Install & usage
+## Best cuts
 
-```bash
-git clone https://github.com/kimsh-1/gongnyang-prompt-kit
-ln -s "$PWD/gongnyang-prompt-kit/skills/image-prompt" ~/.claude/skills/image-prompt
-```
+| TP8 · Liquid chrome (녹아 "melt") | TP13 · Anamorphic illusion (LOOK) | TP14 · Micrography (고요 "stillness") |
+|---|---|---|
+| ![TP8 liquid chrome — 녹아 "melt"](docs/showcase/TP08.webp) | ![TP13 anamorphic illusion — LOOK](docs/showcase/TP13.webp) | ![TP14 micrography — 고요 "stillness"](docs/showcase/TP14.webp) |
+| **Occlusion × shadow narrative (집 "home")** | **Masking × typo-environment (폭풍 "storm")** | **L9 shadow narrative (film camera)** |
+| ![Occlusion × shadow narrative — 집 "home"](docs/showcase/PR07.webp) | ![Masking × typo-environment — 폭풍 "storm"](docs/showcase/PR08.webp) | ![L9 shadow narrative — film camera](docs/showcase/HD01.webp) |
 
-In Claude Code, trigger it with phrases like "write me an image prompt", "editorial prompt", "key art", "typography poster" — or run `/image-prompt`. Installing via symlink means repo updates apply automatically. Node.js is required to run the validator.
+Full gallery (21 before/after pairs · 14 TP patterns · 12 P cuts · 12 L9 cuts) → [demo site](https://kimsh-1.github.io/gongnyang-prompt-kit) · representative dense-diagram cuts live in [`examples/diagram-gallery/`](examples/diagram-gallery/)
 
-Check every prompt you write with the validator. It is tier-aware: it only flags negatives outside the whitelist.
+## Structure, releases & license
 
-```bash
-node skills/image-prompt/scripts/check_prompt.mjs examples/poster.txt        # text mode
-node skills/image-prompt/scripts/check_prompt.mjs --tier 2 examples/hwabo_formatB.txt
-node skills/image-prompt/scripts/check_prompt.mjs --jsonl examples/prompts.sample.jsonl
-node skills/image-prompt/scripts/check_prompt.mjs --test                     # regression self-test
-```
+SKILL.md holds only the always-loaded core; deep detail is split into `references/` (progressive disclosure).
 
-It returns `{ok, format, tier, errors, warnings}` as JSON. Negatives outside the whitelist, leading brackets, deprecated SD vocabulary, size-lock violations, and leftover slot tokens are `error`s (with positive-rewrite hints); empty adjectives, missing HEX, and the like are `warning`s. Passing and failing samples live in [`examples/`](examples/).
-
-To go all the way to generation, you need a [Codex CLI](https://github.com/openai/codex) login plus ChatGPT Plus/Pro.
-
-## Structure
-
-A loose request passes through the skill core and references to become a complete prompt, and must pass the validator before moving on to generation. SKILL.md holds only the always-loaded core; deep detail is split into `references/` (progressive disclosure).
+<details>
+<summary>Full <code>skills/image-prompt/</code> tree</summary>
 
 ```
 skills/image-prompt/
@@ -133,6 +159,12 @@ skills/image-prompt/
    └─ fixtures/                  # regression-test fixtures
 ```
 
-## Releases & license
+</details>
 
-Change history and verification measurements → [GitHub Releases](https://github.com/kimsh-1/gongnyang-prompt-kit/releases). Release checklist: [`RELEASING.md`](RELEASING.md). License: [MIT](LICENSE).
+Change history & verification measurements → [GitHub Releases](https://github.com/kimsh-1/gongnyang-prompt-kit/releases) · release checklist [`RELEASING.md`](RELEASING.md) · license [MIT](LICENSE)
+
+---
+
+<div align="center">
+<sub>🐾 vague one-liner → finished prompt — <a href="https://kimsh-1.github.io/gongnyang-prompt-kit">kimsh-1.github.io/gongnyang-prompt-kit</a></sub>
+</div>
