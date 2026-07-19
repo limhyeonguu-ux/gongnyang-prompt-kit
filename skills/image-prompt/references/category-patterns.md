@@ -22,6 +22,7 @@
 - 기본 AR: `4:5` 또는 `2:3`, 모바일 포스터 `9:16`
 - 필수: 정확한 한글 타이틀·부제·필요 시 장소/시간 메타·여백 시스템·타입 위계·또렷한 텍스트
 - 항상 추가: "모든 텍스트는 한 번씩만, 완벽히 또렷하게."
+- **타이포그래피가 곧 이미지인 포스터**(글자 안에 사진·터널 반복·재질 조각·그림자 글자·착시 등)는 `typo-poster-router.md`에서 TP 패턴 1개를 고르고 `typo-poster/TPn-*.md` 하나만 로드
 
 ## C4 제품 도감
 - 컷타입: `exploded_view` `hero_callout` `cutaway` `comparison_grid` `blueprint` `lineup_family`

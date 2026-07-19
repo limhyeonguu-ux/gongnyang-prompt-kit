@@ -128,6 +128,24 @@ AR 16:9
 
 韓国語ヘッドラインは**マスキング・押し出しともに2文字が安全圏**（3文字以上は画が潰れやすい）、オクルージョンは `reads behind it` の一文で成立する。
 
+## タイポグラフィポスター（TP1〜TP14）— 文字がそのままイメージになる
+
+「これ、文字で作ったの？」を狙うタイポグラフィポスターの文法14種。文字の中に風景をマスキングし（TP1）、一語をトンネルとして無限に反復して空間を作り（TP2）、文字を建築として積み（TP3）、ランプの影と水面の反射が文字を書き（TP4）、ガラス・クローム・風船の実物で削り出し（TP7〜TP9）、室内空間に分節塗装したペイントがただ一つの視点でのみ単語へ合体し（TP13）、数千の微細な文字が肖像を描く（TP14）。ルーター表からパターンを1つ選び、ファイルを1つだけロードする → [`skills/image-prompt/references/typo-poster-router.md`](skills/image-prompt/references/typo-poster-router.md)
+
+| TP1・フォトマスキング（SEOUL） | TP2・テキストトンネル（무한／無限） | TP3・タイプ建築（BUILD·WERK） |
+|---|---|---|
+| ![TP1 photo masking — SEOUL](docs/showcase/TP01.webp) | ![TP2 text tunnel — 무한](docs/showcase/TP02.webp) | ![TP3 type architecture — BUILD WERK](docs/showcase/TP03.webp) |
+| **TP4・光学現象（쉼／休息）** | **TP5・物性破壊（해체／解体）** | **TP6・スイス・キネティック（will kern for food）** |
+| ![TP4 optical — 쉼 shadow](docs/showcase/TP04.webp) | ![TP5 material breakdown — 해체](docs/showcase/TP05.webp) | ![TP6 swiss kinetic — will kern for food](docs/showcase/TP06.webp) |
+| **TP7・素材彫刻（얼음／氷）** | **TP8・リキッドクローム（녹아／溶けて）** | **TP9・インフレータブル（몰랑／ぷにぷに）** |
+| ![TP7 material sculpting — 얼음](docs/showcase/TP07.webp) | ![TP8 liquid chrome — 녹아](docs/showcase/TP08.webp) | ![TP9 inflatable — 몰랑](docs/showcase/TP09.webp) |
+| **TP10・オプアート・パターン（진동／振動）** | **TP11・アシッド・グラフィックス（광란／狂乱）** | **TP12・フューチャー・ミディーバル（심판／審判）** |
+| ![TP10 op-art — 진동](docs/showcase/TP10.webp) | ![TP11 acid — 광란](docs/showcase/TP11.webp) | ![TP12 future medieval — 심판](docs/showcase/TP12.webp) |
+| **TP13・アナモルフィック錯視（LOOK）** | **TP14・ミクログラフィ（고요／静けさ）** | |
+| ![TP13 anamorphic — LOOK](docs/showcase/TP13.webp) | ![TP14 micrography — 고요](docs/showcase/TP14.webp) | |
+
+韓国語のヒーロー語がほとんどのパターンでそのまま成立する — クロームドリップの「녹아」、風船の「몰랑」、オプアートの「진동」、影の「쉼」、宮書体の刃「심판」、微細文字の肖像「고요」まで。全カットのコンパイル・レコードは [`examples/typo-poster.jsonl`](examples/typo-poster.jsonl)。
+
 ## ホンデ・インディーのムードライン（L9）— ホンデ病ギャラリー
 
 「かっこいい」という感覚を勘ではなく**8つの生成エンジン**に分解したホンデ・インディーのムードライン（ルックプリセット L9）。一語を世界へ開くタイポグラフィ（A）、芸術運動の再解釈（B）、コラージュ（C）、フィルム写真（D）、Riso ジン・ポスター（E）、ミクストメディア（F）、静物（G）、そしてオブジェの落とす影がシネマティックな場面へにじむ**影のナラティブ（H）** — 同じムードを8通りに引き出す。影のナラティブはスキルの `shadow_narrative`（C11）文法と直結する。

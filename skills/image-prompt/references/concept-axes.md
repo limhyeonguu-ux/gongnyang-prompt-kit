@@ -116,7 +116,7 @@
 
 비율 합 100, 4색 초과 금지(철칙 #5의 컷당 3~5색 안에서).
 
-## T축 — 타이포 아트 4기법 (C3 포스터·로고·타이포 중심 컷)
+## T축 — 타이포 아트 5기법 (C3 포스터·로고·타이포 중심 컷)
 
 > 전부 렌더 텍스트를 다루므로 **Tier-1 결합 공식 1회 필수**, 한글 카피는 캔버스 크기 레버(2048) 적용. 영역 문법은 `typography-layout.md`.
 
@@ -167,6 +167,23 @@
   every other stroke kept clean and geometric.
   Single ink #111111 on warm paper field #F5F1E8.
   ```
+
+### T5 글자 안의 세계 (거대 단어 + 획 안 미니어처 씬)
+대상을 배경에 그리지 않고 **거대한 한글 단어 하나의 획 안을 그 단어 정서의 미니어처 씬으로 채운다**. 획마다 다른 장면, 몇 요소는 글자 밖 여백으로 흘려 답답함을 푼다. 하단에 손글씨/브러시 서브헤드 1줄.
+- 절차: ① 단어 선정(정서가 뚜렷할수록 좋다: 청춘·새벽·낭만) → ② 그 정서의 소재 8~10개 나열(청춘→라이브클럽·레코드샵·포장마차·옥상고양이·공중전화·버스킹) → ③ 획마다 다른 장면 배정, 반복 없음 → ④ 몇 요소만 글자 밖으로.
+- 드롭인 골격: `a single giant Korean word "{단어}" filling most of the frame in bold hangul, every stroke packed with tiny scenes of {정서·소재}, each stroke its own vignette, a few elements spilling past the letters into the margin`
+- **완성 예 — "청춘"**:
+  ```
+  Scene: a single giant Korean word "청춘" filling most of the tall frame in bold brush-influenced
+  hangul, every stroke packed with tiny Hongdae indie scenes — a basement live club, a used-record
+  shop, a pojangmacha tent, rooftop cats, a payphone, a busker — each stroke its own vignette,
+  a few kites and telephone wires spilling past the letters into the margin.
+  Color grading: aged cream #E8DCC4, vermilion #B33A2B, indigo #274A78, mustard #D9A54B, ink #1C1A17.
+  Text-in-image: this single hangul word is the composition itself, a brush subhead below reads
+  "우리는 다 어렸다". All text appears once, perfectly legible — no duplicate text, no extra words,
+  no invented glyphs, no watermark.
+  ```
+- 💡 기본 `4:5`(1024x1536), 획 안 장면이 밀집이면 `2048x2048`. Tier-1 결합공식은 1회만, 단어의 두 번째 언급은 따옴표 없이 쓴다(중복 렌더 방지).
 
 ## 컨셉 프리플라이트 (컴파일 전 짧은 루프)
 

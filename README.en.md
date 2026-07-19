@@ -128,6 +128,24 @@ Patterns cross-bred 2–3 at a time and anchored with a Korean headline.
 
 Korean headlines stay safe at **2 characters for both masking and extrusion** (3+ tends to smear the strokes); occlusion holds together with a single `reads behind it` sentence.
 
+## Typography Posters (TP1–TP14) — Type as Image
+
+Fourteen typography-poster grammars built to trigger "wait, that's made out of letters?" Landscape masked inside the glyphs (TP1), a single word tunneled into infinite repetition to build space (TP2), letters stacked into architecture (TP3), lamp shadows and water reflections that write the letters (TP4), forms carved from real glass, chrome, and balloons (TP7–TP9), segmented paint across an interior space that snaps into a word from one single viewpoint only (TP13), and thousands of micro-letters drawing a portrait (TP14). Pick one pattern from the router table and load a single file → [`skills/image-prompt/references/typo-poster-router.md`](skills/image-prompt/references/typo-poster-router.md)
+
+| TP1 · Photo masking (SEOUL) | TP2 · Text tunnel (무한, mu-han, infinite) | TP3 · Type architecture (BUILD·WERK) |
+|---|---|---|
+| ![TP1 photo masking — SEOUL](docs/showcase/TP01.webp) | ![TP2 text tunnel — 무한](docs/showcase/TP02.webp) | ![TP3 type architecture — BUILD WERK](docs/showcase/TP03.webp) |
+| **TP4 · Optical phenomenon (쉼, swim, rest)** | **TP5 · Material destruction (해체, hae-che, deconstruct)** | **TP6 · Swiss kinetic (will kern for food)** |
+| ![TP4 optical phenomenon — 쉼 shadow](docs/showcase/TP04.webp) | ![TP5 material destruction — 해체](docs/showcase/TP05.webp) | ![TP6 Swiss kinetic — will kern for food](docs/showcase/TP06.webp) |
+| **TP7 · Material sculpting (얼음, eol-eum, ice)** | **TP8 · Liquid chrome (녹아, nok-a, melt)** | **TP9 · Inflatable (몰랑, mol-lang, squishy)** |
+| ![TP7 material sculpting — 얼음](docs/showcase/TP07.webp) | ![TP8 liquid chrome — 녹아](docs/showcase/TP08.webp) | ![TP9 inflatable — 몰랑](docs/showcase/TP09.webp) |
+| **TP10 · Op-art pattern (진동, jin-dong, vibration)** | **TP11 · Acid graphics (광란, gwang-ran, frenzy)** | **TP12 · Future medieval (심판, sim-pan, judgment)** |
+| ![TP10 op-art pattern — 진동](docs/showcase/TP10.webp) | ![TP11 acid — 광란](docs/showcase/TP11.webp) | ![TP12 future medieval — 심판](docs/showcase/TP12.webp) |
+| **TP13 · Anamorphic illusion (LOOK)** | **TP14 · Micrography (고요, go-yo, stillness)** | |
+| ![TP13 anamorphic — LOOK](docs/showcase/TP13.webp) | ![TP14 micrography — 고요](docs/showcase/TP14.webp) | |
+
+Korean hero words hold up across most of the patterns as-is — chrome drip "녹아" (nok-a, melt), balloon "몰랑" (mol-lang, squishy), op-art "진동" (jin-dong, vibration), shadow "쉼" (swim, rest), blade-serif "심판" (sim-pan, judgment), all the way to the micro-letter portrait "고요" (go-yo, stillness). Compile records for every cut are in [`examples/typo-poster.jsonl`](examples/typo-poster.jsonl).
+
 ## Hongdae indie mood line (L9) — the Hongdae-byeong gallery
 
 A Hongdae indie mood line (look preset L9) that decomposes the "looks-cool" feeling into **8 generation engines** rather than gut feel. Typography that opens a word into a world (A), art-movement reinterpretation (B), collage (C), film photography (D), Riso zine poster (E), mixed media (F), still life (G), and **shadow narrative (H)** — where an object's cast shadow bleeds into a cinematic scene. The same mood, drawn eight ways. Shadow narrative connects directly to the skill's `shadow_narrative` (C11) grammar.

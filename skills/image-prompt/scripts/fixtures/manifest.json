@@ -142,5 +142,27 @@
         "E-SIZE-RATIO"
       ]
     }
+  },
+  {
+    "path": "fixtures/good/typo_poster_material.txt",
+    "mode": "text",
+    "flags": [
+      "--tier",
+      "1"
+    ],
+    "expect": {
+      "ok": true
+    }
+  },
+  {
+    "path": "fixtures/good/typo_poster_tunnel.txt",
+    "mode": "text",
+    "flags": [
+      "--tier",
+      "1"
+    ],
+    "expect": {
+      "ok": true
+    }
   }
 ]

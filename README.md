@@ -552,6 +552,24 @@ AR 4:5
 
 한글 헤드라인은 **마스킹·압출 모두 2글자가 안전권**(3자 이상은 획이 뭉개지기 쉽다), 오클루전은 `reads behind it` 한 문장으로 성립한다.
 
+## 타이포그래피 포스터 (TP1~TP14) — 글자가 곧 이미지
+
+"이게 글자로 만든 거라고?"를 노리는 타이포그래피 포스터 문법 14종. 글자 안에 풍경을 마스킹하고(TP1), 단어 하나를 터널로 무한 반복해 공간을 만들고(TP2), 글자를 건축물로 쌓고(TP3), 램프 그림자와 수면 반사가 글자를 쓰고(TP4), 유리·크롬·풍선 실물로 깎고(TP7~TP9), 실내 공간에 분절 도색한 페인트가 단 하나의 시점에서만 단어로 합체하고(TP13), 수천 개의 미세 글자가 초상을 그린다(TP14). 라우터 표에서 패턴 1개를 고르고 파일 하나만 로드한다 → [`skills/image-prompt/references/typo-poster-router.md`](skills/image-prompt/references/typo-poster-router.md)
+
+| TP1 · 포토 마스킹 (SEOUL) | TP2 · 텍스트 터널 (무한) | TP3 · 타입 건축 (BUILD·WERK) |
+|---|---|---|
+| ![TP1 포토 마스킹 — SEOUL](docs/showcase/TP01.webp) | ![TP2 텍스트 터널 — 무한](docs/showcase/TP02.webp) | ![TP3 타입 건축 — BUILD WERK](docs/showcase/TP03.webp) |
+| **TP4 · 광학 현상 (쉼)** | **TP5 · 물성 파괴 (해체)** | **TP6 · 스위스 키네틱 (will kern for food)** |
+| ![TP4 광학 현상 — 쉼 그림자](docs/showcase/TP04.webp) | ![TP5 물성 파괴 — 해체](docs/showcase/TP05.webp) | ![TP6 스위스 키네틱 — will kern for food](docs/showcase/TP06.webp) |
+| **TP7 · 재질 조각 (얼음)** | **TP8 · 리퀴드 크롬 (녹아)** | **TP9 · 인플레이터블 (몰랑)** |
+| ![TP7 재질 조각 — 얼음](docs/showcase/TP07.webp) | ![TP8 리퀴드 크롬 — 녹아](docs/showcase/TP08.webp) | ![TP9 인플레이터블 — 몰랑](docs/showcase/TP09.webp) |
+| **TP10 · 옵아트 패턴 (진동)** | **TP11 · 애시드 그래픽스 (광란)** | **TP12 · 퓨처 미디벌 (심판)** |
+| ![TP10 옵아트 패턴 — 진동](docs/showcase/TP10.webp) | ![TP11 애시드 — 광란](docs/showcase/TP11.webp) | ![TP12 퓨처 미디벌 — 심판](docs/showcase/TP12.webp) |
+| **TP13 · 아나모픽 착시 (LOOK)** | **TP14 · 미크로그래피 (고요)** | |
+| ![TP13 아나모픽 — LOOK](docs/showcase/TP13.webp) | ![TP14 미크로그래피 — 고요](docs/showcase/TP14.webp) | |
+
+한글 히어로 단어가 대부분의 패턴에서 그대로 성립한다 — 크롬 드립 "녹아", 풍선 "몰랑", 옵아트 "진동", 그림자 "쉼", 궁서 칼날 "심판", 미세 글자 초상 "고요"까지. 전 컷의 컴파일 레코드는 [`examples/typo-poster.jsonl`](examples/typo-poster.jsonl).
+
 ## 홍대 인디 무드 라인 (L9) — 홍대병 갤러리
 
 "있어보이는" 감성을 감이 아니라 **8개 생성 엔진**으로 분해한 홍대 인디 무드 라인(룩 프리셋 L9). 단어를 세계로 여는 타이포(A), 사조 재해석(B), 콜라주(C), 필름 사진(D), Riso 진 포스터(E), 믹스미디어(F), 정물(G), 그리고 오브제의 그림자가 시네마틱 장면으로 번지는 **그림자 서사(H)** — 같은 무드를 여덟 갈래로 뽑는다. 그림자 서사는 스킬의 `shadow_narrative`(C11) 문법과 직결된다.

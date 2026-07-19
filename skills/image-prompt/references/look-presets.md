@@ -18,6 +18,7 @@
 | 레트로, 옛날 느낌, 다방, 국풍 | L6 코리안 레트로 인쇄 |
 | 부드러운, 교육, 워크숍, 친근한 | L7 소프트 파스텔 |
 | 시상식, 초대장, 연말, 골드 | L8 골드 포일 프리미엄 |
+| 홍대, 인디, 필름 감성, 힙한, 예술병 | L9 홍대 인디 |
 
 ## L1 럭셔리 에디토리얼
 - 성격: 과감한 여백 + 얇은 세리프 + 뮤트 팔레트. 백화점 시즌 캠페인 톤.
@@ -59,6 +60,12 @@
 - 팔레트: `#101A2E` 딥 네이비(또는 `#1A2E1E` 딥 그린) · `#C9A24B` 골드 포일 · `#F3EEE2` 크림
 - 드롭인: `deep navy field #101A2E, embossed gold-foil motifs #C9A24B catching a soft raking light, cream type #F3EEE2, letterpress paper texture with debossed line ornaments, ceremonial premium finish`
 
+## L9 홍대 인디
+- 성격: 홍대/인디 감성 — 35mm 플래시 스냅의 near-black 폴오프 + 리소 2도 그레인 + 필름 라이트리크. "힙한데 저장하고 싶은" 예술병 톤(난해함은 버리고 시그니파이어만).
+- 팔레트: `#0B0D12` 니어블랙 · `#E8C4A8` 플래시 웜스킨 · `#FF48A0` 리소 핑크 · `#2A48C4` 리소 블루 · `#E8DCC4` 바랜 크림
+- 드롭인: `raw Hongdae-indie mood — direct on-camera flash with deep near-black falloff, 35mm film grain and halation, a soft light leak bleeding from one corner, riso two-tone accents in fluorescent pink #FF48A0 and rich blue #2A48C4 over aged cream #E8DCC4, gritty analog finish that still reads as composed`
+
 ## 실측 메모
 
 - L5는 VOL.2 키비주얼·구조도에서 검증(2026-07-02, 한글 렌더 정확). 나머지 프리셋은 어휘 단위로는 기존 실측 범위(photo-vocab·C3·C11) 안이지만 **프리셋 단위 실측은 미완** — 첫 사용 시 2컷 변주로 검증 후 확정 권장.
+- 💡 L9는 near-black 폴오프·리소 듀오톤·라이트리크 세 시그니처가 함께 있어야 톤이 성립한다 — 하나라도 빠지면 일반 필름 프리셋으로 퇴행.

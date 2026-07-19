@@ -126,6 +126,7 @@ API는 커스텀이지만 **codex(`$imagegen`) 경로는 6종만** 안전. `auto
 - **`references/category-patterns.md`** — C1~C12 컷타입·기본 AR·필수 디테일·공통 DNA·만화 A/B·덱 DNA.
 - **`references/look-presets.md`** — 프리미엄 룩 프리셋 9종(럭셔리·시네마틱·미니멀 프로덕트·스위스 타이포·다크 테크·레트로 인쇄·파스텔·골드 포일·홍대 인디) 드롭인 블록.
 - **`references/promo-router.md`** — 홍보판촉물 P1~P8 라우터(요청→패턴→파일 표·공통 원칙·마감 디바이스·교배·C7/C5 라우팅). 패턴 상세는 **`references/promo/Pn-*.md`** 개별 파일(고른 것 하나만 로드): P1 타이포-마스크·P2 타이포-환경·P3 오버사이즈 크롭+오클루전·P4 컬러 블로킹 캠페인·P5 메타 UI·P6 스트리트 콜라주·P7 에디토리얼 회전축·P8 모노크롬 스테이징.
+- **`references/typo-poster-router.md`** — 타이포그래피 포스터 TP1~TP14 라우터(요청→패턴→파일 표·공통 DNA·경계·교배·한글 크로스 규칙). 패턴 상세는 **`references/typo-poster/TPn-*.md`** 개별 파일(고른 것 하나만 로드): TP1 포토 마스킹·TP2 텍스트 터널·TP3 타입 건축·TP4 광학 현상·TP5 물성 파괴·TP6 스위스 키네틱·TP7 재질 조각·TP8 리퀴드 크롬·TP9 인플레이터블·TP10 옵아트 패턴·TP11 애시드·TP12 퓨처 미디벌·TP13 아나모픽·TP14 미크로그래피.
 - **`references/concept-axes.md`** — 컨셉 변수 축: 미학 사조 10종(M1~M10 조형언어 분해)·몸 반응 번역 8종(R축)·모순쌍 레이어 분리(X축)·컬러 번역(음악·장면→팔레트)·타이포 아트 5기법(T1~T5, 글자 안의 세계)·컨셉 프리플라이트·양산 스윕 패턴.
 - **`references/jsonl-and-examples.md`** — jsonl 스키마(format/tier/lane)·모델 팩트·완성 예제·codex 골격·8섹션 변형.
 - **`references/typography-layout.md`** — 영역 문법·롤 라벨·폰트 어휘·정확 문자열·그리드.
