@@ -4,7 +4,7 @@
 
 <samp>**한국어** · [English](README.en.md) · [日本語](README.ja.md)</samp>
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-black.svg)](LICENSE) &nbsp;![Claude Code Skill](https://img.shields.io/badge/Claude_Code-Skill-d97757) &nbsp;![target: gpt-image-2](https://img.shields.io/badge/target-gpt--image--2-1E4D40) &nbsp;![library: C1-C12 + P1-P8](https://img.shields.io/badge/library-C1--C12_+_P1--P8-C19A6B)
+[![License: MIT](https://img.shields.io/badge/License-MIT-black.svg)](LICENSE) &nbsp;![Claude Code Skill](https://img.shields.io/badge/Claude_Code-Skill-d97757) &nbsp;![target: gpt-image-2](https://img.shields.io/badge/target-gpt--image--2-1E4D40) &nbsp;![library: C1-C12 + P1-P8 + TP1-TP14](https://img.shields.io/badge/library-C1--C12_+_P1--P8_+_TP1--TP14-C19A6B)
 
 ![공냥 프롬프트 킷 VOL.2 키비주얼](docs/main.png)
 
@@ -637,11 +637,14 @@ node skills/image-prompt/scripts/check_prompt.mjs --test                   # 회
 
 ```
 skills/image-prompt/
-├─ SKILL.md                      # 코어 — 워크플로우·철칙·티어 네거티브·포맷 A/B·사이즈락·라우팅
+├─ SKILL.md                      # 코어 — 워크플로우·라우팅 표(단일)·철칙·포맷 A/B·사이즈락·검증기
 ├─ references/                   # 필요할 때만 읽는 깊은 내용
 │  ├─ category-patterns.md       #   C1~C12 컷타입·기본 AR·만화 A/B·키아트·덱
 │  ├─ look-presets.md            #   프리미엄 룩 프리셋 9종 드롭인
 │  ├─ promo-router.md            #   홍보판촉물 문법 라우터(P1~P8)·마감 디바이스·크로스브리드
+│  ├─ promo/                     #     P1~P8 패턴별 드롭인 (라우터가 고른 1개만 로드)
+│  ├─ typo-poster-router.md      #   타이포그래피 포스터 라우터(TP1~TP14)
+│  ├─ typo-poster/               #     TP1~TP14 패턴별 드롭인 (라우터가 고른 1개만 로드)
 │  ├─ concept-axes.md            #   변수 축 — 사조 10종·몸 반응 번역·모순쌍·컬러 번역·타이포 아트
 │  ├─ typography-layout.md       #   영역 문법·롤 라벨·폰트 어휘·정확 문자열·그리드
 │  ├─ editorial-hwabo.md         #   화보 Format B·슬롯 12종·컴플라이언스 레인

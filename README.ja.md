@@ -4,7 +4,7 @@
 
 <samp>[한국어](README.md) · [English](README.en.md) · **日本語**</samp>
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-black.svg)](LICENSE) &nbsp;![Claude Code Skill](https://img.shields.io/badge/Claude_Code-Skill-d97757) &nbsp;![target: gpt-image-2](https://img.shields.io/badge/target-gpt--image--2-1E4D40) &nbsp;![library: C1-C12 + P1-P8](https://img.shields.io/badge/library-C1--C12_+_P1--P8-C19A6B)
+[![License: MIT](https://img.shields.io/badge/License-MIT-black.svg)](LICENSE) &nbsp;![Claude Code Skill](https://img.shields.io/badge/Claude_Code-Skill-d97757) &nbsp;![target: gpt-image-2](https://img.shields.io/badge/target-gpt--image--2-1E4D40) &nbsp;![library: C1-C12 + P1-P8 + TP1-TP14](https://img.shields.io/badge/library-C1--C12_+_P1--P8_+_TP1--TP14-C19A6B)
 
 ![ゴンニャン・プロンプトキット VOL.2 キービジュアル](docs/main.png)
 
@@ -213,16 +213,19 @@ node skills/image-prompt/scripts/check_prompt.mjs --test                   # 回
 
 ```
 skills/image-prompt/
-├─ SKILL.md                      # コア — ワークフロー・鉄則・ティアネガティブ・フォーマット A/B・サイズロック・ルーティング
+├─ SKILL.md                      # コア — ワークフロー・ルーティング表・鉄則・ティアネガティブ・フォーマット A/B・サイズロック
 ├─ references/                   # 必要な時だけ読む深い内容
-│  ├─ category-patterns.md       #   C1–C12 カットタイプ・既定 AR・漫画 A/B・キーアート・デッキ
+│  ├─ category-patterns.md       #   C1–C12 カットタイプ・既定 AR・漫画 A/B・キーアート・デッキ・高密度実測
 │  ├─ look-presets.md            #   プレミアム・ルックプリセット9種のドロップイン
 │  ├─ promo-router.md            #   販促文法ルーター（P1–P8）+ 仕上げデバイス + クロスブリード
+│  ├─ promo/                     #   P1–P8 パターン別ドロップイン（選んだ1ファイルだけロード）
+│  ├─ typo-poster-router.md      #   タイポグラフィポスター・ルーター（TP1–TP14）
+│  ├─ typo-poster/               #   TP1–TP14 パターン別ドロップイン（選んだ1ファイルだけロード）
 │  ├─ concept-axes.md            #   変数軸 — 運動10種・身体反応の翻訳・色の翻訳・タイポグラフィアート
 │  ├─ typography-layout.md       #   ゾーン文法・ロールラベル・フォント語彙・正確な文字列・グリッド
-│  ├─ editorial-hwabo.md         #   エディトリアル Format B・12スロット・コンプライアンス・レーン
+│  ├─ editorial-hwabo.md         #   エディトリアル Format B・12スロット・コンプライアンス・レーン（Tier-2 文字列の正本）
 │  ├─ jsonl-and-examples.md      #   jsonl スキーマ・モデルファクト・codex コール骨格
-│  ├─ photo-vocab.md             #   カメラ・照明・フィルム・構図・色の語彙
+│  ├─ photo-vocab.md             #   カメラ・照明・フィルム・構図・色の語彙 + 韓英混用
 │  └─ style-taxonomy.md          #   ファッション21種 + ペルソナ DNA + マスターテンプレート
 └─ scripts/
    ├─ check_prompt.mjs           # ティア認識バリデーター（--jsonl/--tier/--api/--test）

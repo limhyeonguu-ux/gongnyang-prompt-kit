@@ -4,7 +4,7 @@
 
 <samp>[한국어](README.md) · **English** · [日本語](README.ja.md)</samp>
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-black.svg)](LICENSE) &nbsp;![Claude Code Skill](https://img.shields.io/badge/Claude_Code-Skill-d97757) &nbsp;![target: gpt-image-2](https://img.shields.io/badge/target-gpt--image--2-1E4D40) &nbsp;![library: C1-C12 + P1-P8](https://img.shields.io/badge/library-C1--C12_+_P1--P8-C19A6B)
+[![License: MIT](https://img.shields.io/badge/License-MIT-black.svg)](LICENSE) &nbsp;![Claude Code Skill](https://img.shields.io/badge/Claude_Code-Skill-d97757) &nbsp;![target: gpt-image-2](https://img.shields.io/badge/target-gpt--image--2-1E4D40) &nbsp;![library: C1-C12 + P1-P8 + TP1-TP14](https://img.shields.io/badge/library-C1--C12_+_P1--P8_+_TP1--TP14-C19A6B)
 
 ![Gongnyang Prompt Kit VOL.2 key visual](docs/main.png)
 
@@ -213,11 +213,14 @@ A loose request passes through the skill core and references to become a complet
 
 ```
 skills/image-prompt/
-├─ SKILL.md                      # core — workflow, iron rules, tier negatives, format A/B, size-lock, routing
+├─ SKILL.md                      # core — workflow, routing table, iron rules, tier negatives, format A/B, size-lock
 ├─ references/                   # deep content, read only when needed
 │  ├─ category-patterns.md       #   C1–C12 cut types, default AR, comic A/B, key art, deck
 │  ├─ look-presets.md            #   9 premium look-preset drop-ins
 │  ├─ promo-router.md            #   promo grammar router (P1–P8) + finishing devices + cross-breed
+│  ├─ promo/                     #   P1–P8 per-pattern drop-in files (load only the one you picked)
+│  ├─ typo-poster-router.md      #   typography-poster router (TP1–TP14)
+│  ├─ typo-poster/               #   TP1–TP14 per-pattern files (load only the one you picked)
 │  ├─ concept-axes.md            #   variable axes — 10 movements, bodily-response translation, color translation, typographic art
 │  ├─ typography-layout.md       #   zone grammar, role labels, font vocabulary, exact strings, grid
 │  ├─ editorial-hwabo.md         #   editorial Format B, 12 slots, compliance lane
